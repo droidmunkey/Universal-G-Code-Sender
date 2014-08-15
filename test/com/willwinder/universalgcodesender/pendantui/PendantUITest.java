@@ -223,12 +223,16 @@ public class PendantUITest {
 
             getResponse(url+"/sendGcode?gCode=SEND_FILE");
             assertTrue(mainWindow.sendButtonActionPerformed);
+            
+            systemState.setControlState(ControlState.COMM_SENDING);
 
             getResponse(url+"/sendGcode?gCode=PAUSE_RESUME_FILE");
             assertTrue(mainWindow.pauseButtonActionPerformed);
 
             getResponse(url+"/sendGcode?gCode=CANCEL_FILE");
             assertTrue(mainWindow.cancelButtonActionPerformed);
+            
+            systemState.setControlState(ControlState.COMM_IDLE);
 
             // test adjust manual location handler
             String adjustManualLocationResponse = getResponse(url+"/adjustManualLocation?dirX=1&dirY=2&dirZ=3&stepSize=4.0");
