@@ -18,6 +18,10 @@
     <property name="natives.dir" value="${basedir}/lib/natives/"/>
     <!-- provide a base name for your executable. -->
     <property name="standalone.jar.name" value="UniversalGcodeSender"/>
+
+    <!-- Fix Compile Errors -->
+    <property name="libs.swing-layout.classpath" value="lib/swing-layout-1.0.4.jar"/>
+    <property name="libs.junit_4.classpath" value="/usr/share/java/junit4.jar"/>
     
     <import file="one-jar-ant-task.xml" />
 
